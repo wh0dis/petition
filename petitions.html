@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Black Lives Matter Petition</title>
     <link rel="stylesheet" type="text/css" href="petitions.css">
@@ -11,20 +12,19 @@
     <main>
         
         <section>
-            <h2>Current Petitions</h2>
-            <ul>
-                <li>
-                    <h3 class="petition-title">Justice for Victims of Police Brutality</h3>
-                    <p class="petition-description">Join us in demanding justice for victims of police brutality and calling for meaningful police reform.</p>
-                   
-                    
-                        <input type="hidden" name="petition_id" value="1">
-                        <input type="submit" value="Sign" onclick="showThankYou()">
-                    </form>
-                </li>
-                <!-- Add more petition items here -->
-            </ul>
-        </section>
+    <h2>Current Petitions</h2>
+    <ul>
+        <li>
+            <h3 class="petition-title">Justice for Victims of Police Brutality</h3>
+            <p class="petition-description">Join us in demanding justice for victims of police brutality and calling for meaningful police reform.</p>
+            <form>
+                <input type="hidden" name="petition_id" value="1">
+                <input type="submit" value="Sign" onclick="showThankYou()">
+            </form>
+        </li>
+        <!-- Add more petition items here -->
+    </ul>
+</section>
 
         <div id="thankYouContainer" style="display: none;">
             <h2 class="thank-you">Thank you for signing the petition & making a change!</h2>
@@ -50,11 +50,11 @@
     <footer>
         <p>&copy; 2023 Black Lives Matter Petition. All rights reserved.</p>
     </footer>
-    <script>
-        function showThankYou() {
-            var container = document.getElementById("thankYouContainer");
-            container.style.display = "block";
-        }
-    </script>
+  <script>
+    function showThankYou() {
+        var container = document.getElementById("thankYouContainer");
+        container.style.display = "block";
+    }
+</script>
 </body>
 </html>

